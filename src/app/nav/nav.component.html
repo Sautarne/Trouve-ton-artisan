@@ -1,0 +1,18 @@
+<header>
+    <nav [ngClass]="{'navigation-bar': true, 'show-nav': showList, 'hide-nav': !showList}">
+        <a class="logo" href="/"><img src="Logo.png" alt=""></a>
+        <ul class="nav-list">
+            <li class="list-item Link"><a [routerLink]="['categorie//Batiment']" (click)="handleShowList()">Bâtiment</a></li>
+            <li class="list-item Link"><a [routerLink]="['categorie//Services']" (click)="handleShowList()">Services</a></li>
+            <li class="list-item Link"><a [routerLink]="['categorie//Fabrication']" (click)="handleShowList()">Fabrication</a></li>
+            <li class="list-item Link"><a [routerLink]="['categorie//Alimentation']" (click)="handleShowList()">Alimentation</a></li>
+        </ul>
+        <div class="nav-search">
+            <input type="text" class="input" placeholder="Rechercher..." [(ngModel)]="search" >
+            <img class="icon" src="search icon.png" alt="" (click)="this.performSearch()">
+          </div>
+        <button class="navigation-burger-button" (click)="handleShowListBurger()">
+            <span class="burger-bar"></span>
+        </button>
+    </nav>
+</header>

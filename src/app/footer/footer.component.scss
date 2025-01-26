@@ -1,0 +1,32 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+footer {
+    font-family: $font;
+    background-color: $bleu;
+    width: 100%;
+    margin: 0;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    .footer-container {
+        color: white;
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+
+        .footer-link {
+            display: flex;
+            flex-direction: column;
+            a {
+                color: white;
+                text-decoration: none;
+                margin-bottom: 5px;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

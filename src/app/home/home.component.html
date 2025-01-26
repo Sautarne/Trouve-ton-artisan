@@ -1,0 +1,18 @@
+<main>
+    <div class="content">
+        <span class="bleu"></span>
+        <h1>Comment trouver mon artisan ?</h1>
+        <p>
+            1. Choisir la catégorie d’artisanat dans le menu.<br>
+            2. Choisir un artisan.<br>
+            3. Le contacter via le formulaire de contact.<br>
+            4. Une réponse sera apportée sous 48h.<br>
+        </p>
+        <span class="vert"></span>
+        <h2>Les 3 meilleurs artisans du mois</h2>
+        <ng-container *ngFor="let artisan of topArtisans; let last = last">
+            <app-artisan-preview [artisan]="artisan"></app-artisan-preview>
+            <span class="artisan-delimitation" *ngIf="!last"></span>
+        </ng-container>
+    </div>
+</main>

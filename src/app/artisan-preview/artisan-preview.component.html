@@ -1,0 +1,16 @@
+<div class="artisan-preview-container"> 
+    <div class="artisan-preview">
+        <img [src]="artisan.image" [alt]="artisan.nom">
+        <p class="address">
+            {{ artisan.adresse.rue }} <br>
+            {{ artisan.adresse.ville }} <br>
+            {{ artisan.adresse.codePostal }} <br>
+        </p>
+        <div class="artisan-profession">
+            <strong><p>{{ artisan.nom }}</p></strong>
+            <p>{{ artisan.profession }}</p>
+        </div>
+        <p class="note">{{ artisan.note | stars }}</p>
+        <button class="btn btn-primary" (click)="voirPlus()">Voir plus</button>
+    </div>
+</div>

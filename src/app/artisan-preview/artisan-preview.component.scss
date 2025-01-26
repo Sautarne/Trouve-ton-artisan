@@ -1,0 +1,57 @@
+@import '../styles/variables';
+
+.artisan-preview-container{
+    font-family: $font;
+    width: 100%;
+
+    .artisan-preview {
+    display: grid;
+    grid-template-areas: 
+        "img img address"
+        "artisan note button";
+    grid-template-columns: repeat(3, 1fr);
+
+        img {
+            grid-area: img;
+            width: 100%;
+        }
+
+        .address {
+
+            p {
+                margin-top: 0;
+            }
+            
+            grid-area: address;
+            margin-left: 20px;
+        }
+
+        .artisan-profession {
+            grid-area: artisan;
+
+            p {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .note {
+            grid-area: note;
+            display: flex;
+            align-self: center;
+        }
+
+        button {
+            grid-area: button;
+            height: 40px;
+            width: 100px;
+
+            display: flex;
+            justify-self: center;
+            align-self: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+    }
+}

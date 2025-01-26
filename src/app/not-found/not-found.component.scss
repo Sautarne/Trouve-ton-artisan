@@ -1,0 +1,24 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+main {
+    font-family: $font;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 80vh;
+
+    .container{
+        width: 90%;
+        max-width: 1200px;
+        margin-bottom: 40px;
+
+        .rouge {
+            @include colorBlock($rouge);
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+    }
+}
