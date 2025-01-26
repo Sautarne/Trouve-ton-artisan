@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Graphik";
+  src: url("/public/Graphik-Regular-Trial.woff2") format("woff2");
+}
+html {
+  color: #353d4d;
+  font-family: "Graphik", sans-serif;
+}
+html body {
+  margin: 0;
+}/*# sourceMappingURL=styles.css.map */

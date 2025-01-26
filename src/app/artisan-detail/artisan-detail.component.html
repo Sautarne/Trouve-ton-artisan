@@ -1,0 +1,65 @@
+<main>
+    <div class="artisan-detail-container" *ngIf="artisan">
+        <span class="bleu"></span>
+        <div class="artisan-detail">
+            <h1>{{ artisan.nom }}</h1>
+            <p class="profession">{{ artisan.profession }}</p>
+            <div class="note">
+                <p>{{ artisan.note | stars }}</p>
+            </div>
+            <div class="artisan-site">
+                <a class="btn btn-secondary" [href]="artisan.siteWeb" target="_blank">Visiter le site web</a>
+            </div>
+            <img [src]="artisan.image" [alt]="artisan.nom">
+            <div class="artisan-adresse">
+                <span class="blue-line-verticale"></span>
+                <div class="adresse-container-span">
+                    <div class="addresse-container">
+                        <h2>Adresse</h2>
+                        <p>
+                            {{ artisan.adresse.rue }}<br>
+                            {{ artisan.adresse.ville }}<br>
+                            {{ artisan.adresse.codePostal }}
+                        </p>
+                        <div class="map-container">
+                            <iframe
+                              frameborder="0"
+                              [src]="getMapUrl()"
+                              style="border: 1px solid #ccc; border-radius: 8px;">
+                            </iframe>
+                        </div>
+                    </div>
+                    <span class="blue-line-horizontale"></span>
+                </div>
+            </div>
+            <div class="artisan-about">
+                <h2>À propos</h2>
+                <p>{{ artisan.aPropos }}</p>
+            </div>
+        </div>
+        <form class="contact-form" (ngSubmit)="onSubmit($event)">
+            <span class="vert"></span>
+            <h2>Contacter l'artisan</h2>
+            <p *ngIf="isMessageSent">Votre e-mail a été envoyé à {{ artisan.email }}</p>
+            <div class="form-group">
+                <div class="input-row">
+                    <div class="input-field">
+                        <label for="nom">Nom</label>
+                        <input class="form-nom" type="text" id="nom" name="nom" [(ngModel)]="contactForm.nom" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="objet">Objet</label>
+                        <input class="form-objet" type="text" id="objet" name="objet" [(ngModel)]="contactForm.objet" required>
+                    </div>
+                </div>
+                <div class="input-field">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" [(ngModel)]="contactForm.message" required></textarea>
+                </div>
+                <div class="submit">
+                    <button class="btn btn-primary" type="submit">Envoyer</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>

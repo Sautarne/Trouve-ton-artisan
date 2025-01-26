@@ -1,0 +1,20 @@
+@import './app/styles/variables';
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+//modifie la couleur par défaut des boutons bootstrap
+$primary: $bleu;
+$secondary: $vert;
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+html {
+    color: #353d4d;
+    body {
+        margin: 0;
+    }
+}

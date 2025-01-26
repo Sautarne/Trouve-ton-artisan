@@ -1,0 +1,10 @@
+<main>
+    <div class="container">
+        <span class="bleu"></span>
+        <h2>{{ currentCategory }}</h2>
+        <ng-container *ngFor="let artisan of artisans; let last = last">
+            <app-artisan-preview [artisan]="artisan"></app-artisan-preview>
+            <span class="artisan-delimitation" *ngIf="!last"></span>
+        </ng-container>
+    </div>
+</main>

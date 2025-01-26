@@ -1,0 +1,29 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+main {
+
+    font-family: $font;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin-bottom: 40px;
+
+        .bleu {
+            @include colorBlock($bleu);
+        }
+
+        .artisan-delimitation {
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            height: 1px;
+            background-color: $bleu;
+        }
+      }
+}

@@ -1,0 +1,180 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+main {    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: $font;
+
+    .artisan-detail-container {
+        width: 90%;
+        max-width: 1200px;
+        
+        .bleu {
+            @include colorBlock($bleu);
+        }
+    
+        .artisan-detail {
+            display: grid;
+            grid-template-areas: 
+                "name note"
+                "profession site"
+                "img img"
+                "about address";
+                grid-template-columns: 1fr 1fr;
+        }
+            
+        h1 {
+            grid-area: name;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+        
+        .note {
+            grid-area: note;
+            display: flex;
+            justify-content: end;
+        }
+        
+        .profession {
+            grid-area: profession;
+        }
+        
+        .artisan-site {
+            grid-area: site;
+            display: flex;
+            justify-content: end;
+            margin-bottom: 15px;
+            a {
+                color: $bleuciel;
+                text-decoration: none;
+                font-weight: 500;
+                &:hover {
+                    background-color: $violet;
+                }
+            }
+        }
+        
+        img {
+            grid-area: img;
+            width: 100%;
+        }
+
+        .artisan-adresse {
+            grid-area: address;
+            width: 100%;
+            display: flex;
+
+            .adresse-container-span{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 100%;
+            }
+            .blue-line-verticale {
+                display: block;
+                height: 90%;
+                width: 1px;
+                background-color: $bleu;
+                margin-top: 10px;
+                margin-right: 10px;
+                margin-left: 10px;
+            }
+            .blue-line-horizontale {
+                display: block;
+                position: end;
+                height: 1px;
+                width: 100%;
+                background-color: $bleu;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            .map-container {
+                width: 100%;
+                iframe {
+                    width: 100%;
+                }
+            }
+        }
+        
+        .artisan-about {
+            grid-area: about;
+        }
+
+        /* ===== FORM ===== */
+
+        .contact-form {
+            
+            margin-bottom: 20px;
+
+            .vert {
+                @include colorBlock($vert);
+            }
+
+            p {
+                color: $bleu;
+            }
+
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+        
+            .input-row {
+                display: flex;
+                
+                .input-field {
+                    flex: 1;
+                }
+            }
+        
+            .input-field {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                .form-nom {
+                    width: 90%;
+                }
+        
+                label {
+                    font-weight: 500;
+                }
+
+                input {
+                    padding: 0.5rem;
+                    width: 100%;
+                    height: 30px;
+                }
+        
+                input, textarea {
+                    padding: 0.5rem;
+                    border: 1px solid $bleu;
+                    border-radius: 16px;
+                    width: 100%;
+                    &:focus {
+                        outline: none; 
+                        border: 2px solid $bleumarine;
+                        background-color: $bleuciel;
+                    }
+                }
+        
+                textarea {
+                    resize: vertical;
+                    min-height: 100px;
+                    max-height: 500px;
+                }
+            }
+            
+            .submit {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }    
+    }
+}
